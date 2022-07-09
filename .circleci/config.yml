@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/rails-docker-kyo/src
     steps:
       - checkout:
-        path: ~/rails-docker-kyo
+          path: ~/rails-docker-kyo
       - ruby/install-deps
   
   test:
@@ -18,7 +18,7 @@ jobs:
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE : app_test
+          MYSQL_DATABASE: app_test
           MYSQL_USER: root
     environment:
       BUNDLE_JOBS: "3"
@@ -28,7 +28,7 @@ jobs:
     working_directory: ~/rails-docker-kyo/src
     steps:
       - checkout:
-        path: ~/rails-docker-kyo
+          path: ~/rails-docker-kyo
       - ruby/install-deps
       - run:
           name: Database setup
